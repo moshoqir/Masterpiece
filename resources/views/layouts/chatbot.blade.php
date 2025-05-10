@@ -95,17 +95,17 @@
             chatbot.classList.add("hidden");
         }
     };
-    window.addEventListener("load", loadChatHistory);
+    // window.addEventListener("load", loadChatHistory);
 
-    function loadChatHistory() {
-        const messages = JSON.parse(sessionStorage.getItem("chatHistory") || "[]");
-        messages.forEach(({
-            sender,
-            text
-        }) => {
-            addMessage(sender, text, false);
-        });
-    }
+    // function loadChatHistory() {
+    //     const messages = JSON.parse(sessionStorage.getItem("chatHistory") || "[]");
+    //     messages.forEach(({
+    //         sender,
+    //         text
+    //     }) => {
+    //         addMessage(sender, text, false);
+    //     });
+    // }
 
     window.addEventListener('load', function() {
         let chatbotContainer = document.getElementById("chatbot-container");
