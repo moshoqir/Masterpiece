@@ -90,7 +90,7 @@ Route::group(['middleware' => ['auth', 'logs-out-banned-user']], function () {
         'destroy' => 'timetable.destroy',
     ])->middleware('logs-out-banned-user')->middleware('role:admin');;
 
-    Route::resource('products', ProductController::class)->middleware('logs-out-banned-user')->middleware('role:admin');;
+    Route::resource('products', ProductController::class)->middleware('logs-out-banned-user')->middleware('role:admin');
 });
 
 //Push Notification

@@ -137,29 +137,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group mt-3">
-                                    <label>Package Features</label>
-                                    <div id="features-container">
-                                        <div class="input-group mb-2">
-                                            <input type="text"
-                                                class="form-control @error('features.0') is-invalid @enderror"
-                                                name="features[]" value="{{ old('features.0') }}" placeholder="Feature"
-                                                required>
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-danger remove-feature"
-                                                    type="button">Remove</button>
-                                            </div>
-                                            @error('features.0')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn btn-sm btn-outline-primary" id="add-feature">
-                                        <i class="fas fa-plus"></i> Add Feature
-                                    </button>
-                                </div>
+
                             </div>
                         </div>
                     </div>

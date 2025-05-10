@@ -15,7 +15,6 @@ use App\Models\TrainingSession;
 use App\Models\TrainingPackage;
 
 
-use App\Http\Controllers\Api\EmailVerificationController;
 use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -45,8 +44,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('get_reservations', [TrainingController::class, 'getReservations']);
 });
 Auth::routes(['verify'=>true]);
-Route::post('email/verification-notification', [EmailVerificationController::class, 'resend'])->middleware('auth:sanctum');
-Route::get('email/verify/{id}', [EmailVerificationController::class, 'verify'])->name('verification.verify');
 //Traning Sessions Routes
 
 Route::get('subscription_dates',[TrainingController::class,'get_subscription_dates'])->middleware('auth:sanctum');
@@ -90,7 +87,7 @@ Route::get('/user', [UserController::class, 'index'])->middleware('auth:sanctum'
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/user/show-profile', [UserController::class, 'show_my_profile']);
       Route::put('/user/update-profile', [UserController::class, 'update_my_profile']);
-   
+
 });
 
 

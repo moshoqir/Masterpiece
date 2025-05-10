@@ -268,7 +268,6 @@
                                         <i class="fas fa-shopping-bag"></i>
                                         <span>ADD TO CART</span>
                                     </a>
-                                    <a href="#" class="wishlist-btn"><i class="fa fa-heart"></i></a>
                                 </div>
                             </div>
                             <div class="pi-text">

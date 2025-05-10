@@ -16,13 +16,13 @@
                         </div>
                     @endif
                     <div class="col-sm-6">
-                        <h1>Add New Product</h1>
+                        <h1 class="text-white">Add New Product</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('products.index') }}">Products</a></li>
-                            <li class="breadcrumb-item active">Create Product</li>
+                            <li class="breadcrumb-item active text-white">Create Product</li>
                         </ol>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             <h6 class="alart-success">{{ session('status') }}</h6>
                         @endif
                         <div class="card card-primary">
-                            <div class="card-header" style="background-color: #007bff">
+                            <div class="card-header" style="background-color: purple">
                                 <h3 class="card-title">Product Details</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"

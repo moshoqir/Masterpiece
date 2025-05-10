@@ -1,6 +1,26 @@
 @extends('layouts.user-layout')
 @section('content')
     <div class="content-wrapper pb-4">
+        <div class="premium-header py-4" style="background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="text-white mb-0">DASHBOARD</h1>
+                        <p class="text-light mb-0">Welcome back, {{ Auth::user()->name }}!</p>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        @if (Auth::user()->hasRole('admin'))
+                            <span class="badge badge-pill badge-light px-3 py-2">PREMIUM ADMIN</span>
+                        @elseif (Auth::user()->hasRole('coach'))
+                            <span class="badge badge-pill badge-light px-3 py-2">PREMIUM COACH</span>
+                        @else
+                            <span class="badge badge-pill badge-light px-3 py-2">PREMIUM USER</span>
+                        @endif
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid pt-5">
             <div class="row">
                 {{-- # ======================================= # Dashboard Cards # ======================================= # --}}

@@ -72,7 +72,7 @@
                                                                 class="btn btn-sm btn-info">
                                                                 <i class="fas fa-pencil-alt"></i>
                                                             </a>
-                                                            <a href="javascript:void(0)"
+                                                            <a href="/timetable"
                                                                 onclick="deleteClass({{ $slots[$day]->id }})"
                                                                 class="btn btn-sm btn-danger">
                                                                 <i class="fas fa-trash"></i>

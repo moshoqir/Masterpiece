@@ -81,24 +81,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label>Package Features</label>
-                                <div id="features-container">
-                                    @foreach ($pricing->features as $feature)
-                                        <div class="input-group mb-2">
-                                            <input type="text" class="form-control" name="features[]" required
-                                                value="{{ $feature->feature }}">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-danger remove-feature"
-                                                    type="button">Remove</button>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <button type="button" class="btn btn-sm btn-outline-primary" id="add-feature">
-                                    <i class="fas fa-plus"></i> Add Feature
-                                </button>
-                            </div>
+
                         </div>
 
                         <div class="card-footer">

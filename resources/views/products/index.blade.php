@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h4>Manage Products</h4>
+                        <h4 class="text-white">Manage Products</h4>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Products</li>
+                            <li class="breadcrumb-item active text-white">Products</li>
                         </ol>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                                             href="{{ route('products.edit', $product->id) }}">
                                             <i class="fas fa-pencil-alt"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="deleteProduct({{ $product->id }})"
+                                        <a href="/products" onclick="deleteProduct({{ $product->id }})"
                                             class="btn btn-danger btn-sm">
                                             <i class="fas fa-trash"></i>
                                         </a>
@@ -100,10 +100,12 @@
                     url: '/products/' + id,
                     type: 'DELETE',
                     data: {
-                        _token: $("input[name=_token]").val()
+                        _token: $("input[name=_token]").val() // or use meta tag CSRF
                     },
-                    success: function(response) {
-                        $("#pid" + id).remove();
+                    success: function(response) {},
+                    error: function(xhr) {
+                        console.error(xhr.responseText);
+                        alert("Error deleting product.");
                     }
                 });
             }

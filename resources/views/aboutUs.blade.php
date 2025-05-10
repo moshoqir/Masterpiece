@@ -63,7 +63,7 @@
 
 
     <!-- Banner Section Begin -->
-    <section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
+    <section style="background-color: black" class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 text-center">
@@ -77,14 +77,11 @@
 
                         <!-- Animated CTA Button -->
                         <a href="/contact" class="primary-btn btn-hover" style="padding: 15px 40px; font-size: 1.2rem;">
-                            <span class="btn-text">Réserver Maintenant</span>
+                            <span class="btn-text">Contact Us to book </span>
                             <span class="btn-icon"><i class="fa fa-arrow-right"></i></span>
                         </a>
 
-                        <!-- Countdown Timer (Optional) -->
-                        <div class="offer-countdown mt-4" style="color: #fff; font-size: 1.2rem;">
-                            <span id="countdown" style="font-weight: 700;"></span>
-                        </div>
+
                     </div>
                 </div>
             </div>

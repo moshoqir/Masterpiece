@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h4>All Coaches</h4>
+                        <h4 class="text-white">All Coaches</h4>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Coaches</li>
+                            <li class="breadcrumb-item active text-white">Coaches</li>
                         </ol>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                                         <a class="btn btn-warning btn-sm text-white"
                                             href="{{ route('coach.edit', $coach['id']) }}">
                                             <i class="fas fa-pencil-alt"></i></a>
-                                            <a href="javascript:void(0)" onclick="deleteCoach({{ $coach->id }})"
+                                        <a href="javascript:void(0)" onclick="deleteCoach({{ $coach->id }})"
                                             class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
 
                                         <a href="javascript:void(0)" onclick="banUser({{ $coach->id }})"

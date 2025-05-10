@@ -17,12 +17,12 @@
                         </div>
                     @endif
                     <div class="col-sm-6">
-                        <h1>New User</h1>
+                        <h1 class="text-white">New User</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Create New User</li>
+                            <li class="breadcrumb-item active text-white">Create New User</li>
                         </ol>
                     </div>
                 </div>

@@ -18,6 +18,8 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+
 
     {{-- JS --}}
 
@@ -39,6 +41,66 @@
     <title>Gym System</title>
 </head>
 <style>
+    :root {
+        --primary: #e4381c;
+        --primary-dark: #c1321a;
+        --secondary: #182848;
+        --dark: #0f172a;
+        --light-dark: #1e293b;
+        --light: #f8fafc;
+        --accent: #4b6cb7;
+    }
+
+    .main-sidebar {
+        background-color: var(--dark) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #0f172a;
+
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .brand-link {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1rem 0.5rem !important;
+    }
+
+    .nav-sidebar .nav-item>.nav-link {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 0.25rem;
+        border-radius: 0.25rem;
+    }
+
+    .nav-sidebar .nav-item>.nav-link:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+    }
+
+    .nav-sidebar .nav-item>.nav-link.active {
+        background: var(--primary);
+        color: white;
+        font-weight: 500;
+    }
+
+    .main-footer {
+        background-color: var(--dark);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        font-size: 0.875rem;
+    }
+
+
+
+
+
+
+
+
     .fa,
     .fas,
     .fa {

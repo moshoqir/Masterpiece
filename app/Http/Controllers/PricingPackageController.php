@@ -42,8 +42,8 @@ class PricingPackageController extends Controller
             'price' => 'required|numeric',
             'duration' => 'required|string|max:255',
             'icon' => 'nullable|string|max:255',
-            'features' => 'required|array',
-            'features.*' => 'required|string',
+            'features' => 'nullable|array',
+            'features.*' => 'nullable|string',
         ]);
 
         $package = PricingPackage::create([
@@ -56,15 +56,8 @@ class PricingPackageController extends Controller
             'is_active' => $request->has('is_active')
         ]);
 
-        $order = 0;
 
-        foreach ($request->features as $feature) {
-            PackageFeature::create([
-                'pricing_package_id' => $package->id,
-                'feature' => $feature,
-                'display_order' => $order++
-            ]);
-        }
+
 
         return redirect()->route('pricing.index')->with('success', 'Package created successfully!');
     }
@@ -105,8 +98,8 @@ class PricingPackageController extends Controller
             'price' => 'required|numeric',
             'duration' => 'required|string|max:255',
             'icon' => 'nullable|string|max:255',
-            'features' => 'required|array',
-            'features.*' => 'required|string',
+            'features' => 'nullable|array',
+            'features.*' => 'nullable|string',
         ]);
 
         $pricing->update([
@@ -120,28 +113,12 @@ class PricingPackageController extends Controller
         ]);
 
 
-        //delete old freatures and then update it 
-        $pricing->features()->delete();
 
-        $order = 0;
-
-        foreach ($request->features as $feature) {
-            PackageFeature::create([
-                'pricing_package_id' => $pricing->id,
-                'feature' => $feature,
-                'display_order' => $order++
-            ]);
-        }
 
         return redirect()->route('pricing.index')->with('success', 'Package updated successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(PricingPackage $pricing)
     {
         $pricing->delete();
