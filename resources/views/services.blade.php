@@ -1,7 +1,7 @@
 @extends('layouts.home-layout')
 @section('content')
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg"></section>
+    <section class="breadcrumb-section set-bg" data-setbg="img/main.jpeg"></section>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Breadcrumb Section End -->
@@ -70,6 +70,29 @@
                 </div>
                 <div class="col-lg-4 col-md-8">
                     <div class="sidebar-option">
+                        <div class="so-categories">
+                            <h5 class="title">Fitness Articles</h5>
+                            <ul>
+                                <li>
+                                    <div class="fw-recent">
+                                        <h6><a href={{ 'article1' }}>Physical fitness can help prevent depression,
+                                                anxiety</a></h6>
+                                        <ul>
+                                            <li>3 min read</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="fw-recent">
+                                        <h6><a href={{ 'article2' }}>Fitness: The best exercise to lose belly fat and
+                                                tone up...</a></h6>
+                                        <ul>
+                                            <li>3 min read</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -188,6 +211,61 @@
 
         .session-list {
             margin-top: 10px;
+        }
+
+        /* Styles for the articles sidebar */
+        .so-categories {
+
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .so-categories .title {
+            color: #7D276D;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ebebeb;
+        }
+
+        .fw-recent {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ebebeb;
+        }
+
+        .fw-recent:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .fw-recent h6 a {
+            color: #333333;
+            font-weight: 600;
+            line-height: 1.4;
+            transition: all 0.3s;
+        }
+
+        .fw-recent h6 a:hover {
+            color: #7D276D;
+            text-decoration: none;
+        }
+
+        .fw-recent ul {
+            padding-left: 0;
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .fw-recent ul li {
+            display: inline-block;
+            font-size: 12px;
+            color: #888888;
+            margin-right: 15px;
         }
     </style>
 @endsection

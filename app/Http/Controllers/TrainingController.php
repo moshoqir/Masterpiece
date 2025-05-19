@@ -23,16 +23,16 @@ class TrainingController extends Controller
     public function indexAdmin()
     {
 
-        
+
         $trainingSessions = DB::table('training_sessions')
             ->join('training_session_user', 'training_session_user.training_session_id', '=', 'training_sessions.id')
             ->join('users', 'users.id', '=', 'training_session_user.user_id')
-         
-           ->select('users.name as coach_name', 'training_sessions.*')
-            ->get();
-    
 
-    //    $trainingSessions = TrainingSession::all();
+            ->select('users.name as coach_name', 'training_sessions.*')
+            ->get();
+
+
+        //    $trainingSessions = TrainingSession::all();
         if (count($trainingSessions) <= 0) {
             return view('empty');
         }
@@ -41,16 +41,16 @@ class TrainingController extends Controller
     public function indexCoach()
     {
 
-        
+
         $trainingSessions = DB::table('training_sessions')
             ->join('training_session_user', 'training_session_user.training_session_id', '=', 'training_sessions.id')
             ->join('users', 'users.id', '=', 'training_session_user.user_id')
-            ->where('users.id',Auth::user()->id)
-           ->select('users.name as coach_name', 'training_sessions.*')
+            ->where('users.id', Auth::user()->id)
+            ->select('users.name as coach_name', 'training_sessions.*')
             ->get();
-    
 
-    //    $trainingSessions = TrainingSession::all();
+
+        //    $trainingSessions = TrainingSession::all();
         if (count($trainingSessions) <= 0) {
             return view('empty');
         }
@@ -156,7 +156,7 @@ class TrainingController extends Controller
     {
         $userId = DB::select("select user_id from training_session_user where training_session_id = $id");
 
-    //    $user = User::find($userId);
+        //    $user = User::find($userId);
 
         $trainingSession = TrainingSession::findorfail($id);
         return view('TrainingSessions.show_training_session', ['trainingSession' => $trainingSession]);
@@ -166,11 +166,13 @@ class TrainingController extends Controller
     #=======================================================================================#
     public function edit($id)
     {
-        $trainingSessions = TrainingSession::all();
+        // $trainingSessions = TrainingSession::all();
 
-        $trainingSession = TrainingSession::find($id);
+        $trainingSession = TrainingSession::with('users')->findorfail($id);
 
-        return view('TrainingSessions.edit_training_session', ['trainingSession' => $trainingSession, 'trainingSessions' => $trainingSessions]);
+
+
+        return view('TrainingSessions.edit_training_session', ['trainingSession' => $trainingSession]);
     }
     #=======================================================================================#
     #			                             update                                         #
@@ -237,4 +239,3 @@ class TrainingController extends Controller
         }
     }
 }
-

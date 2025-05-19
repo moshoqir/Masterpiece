@@ -16,13 +16,13 @@
                         </div>
                     @endif
                     <div class="col-sm-6">
-                        <h1>Create Pricing Package</h1>
+                        <h1 class="text-white">Create Pricing Package</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('pricing.index') }}">Pricing Packages</a></li>
-                            <li class="breadcrumb-item active">Create Package</li>
+                            <li class="breadcrumb-item active text-white">Create Package</li>
                         </ol>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             <h6 class="alart-success">{{ session('status') }}</h6>
                         @endif
                         <div class="card card-primary">
-                            <div class="card-header" style="background-color: #007bff">
+                            <div class="card-header" style="background-color: purple">
                                 <h3 class="card-title">Package Details</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"

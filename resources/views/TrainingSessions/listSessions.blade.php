@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>All Sessions</h1>
+                        <h1 class="text-white">All Sessions</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Projects</li>
+                            <li class="breadcrumb-item active text-white">Projects</li>
                         </ol>
                     </div>
                 </div>
@@ -52,34 +52,33 @@
                                     <td>{{ $trainingSession->id }}</td>
                                     <td>{{ $trainingSession->name }} </td>
                                     <td>{{ $trainingSession->day }} </td>
-                                    <td>{{ $trainingSession->coach_name}} </td>
+                                    <td>{{ $trainingSession->coach_name }} </td>
                                     <td>{{ $trainingSession->starts_at }}</td>
                                     <td>{{ $trainingSession->finishes_at }}</td>
 
                                     <td class="project-actions text-center">
                                         <a class="btn btn-info btn-sm"
-                                            href="{{ route('TrainingSessions.show_training_session', $trainingSession->id ) }}">
+                                            href="{{ route('TrainingSessions.show_training_session', $trainingSession->id) }}">
 
                                             <i class="fa fa-eye"></i>
                                         </a>
 
                                         @role('user')
-
                                             <a class="btn btn-warning btn-sm text-white"
-                                                href="{{ route('PaymentPackage.stripe', $trainingSession->id ) }}">
+                                                href="{{ route('PaymentPackage.stripe', $trainingSession->id) }}">
 
                                                 <i class="fas fa-address-book"></i>
                                             </a>
                                         @endrole
 
-                            @role('admin|coach')
-                                        <a class="btn btn-warning btn-sm text-white"
-                                            href="{{ route('TrainingSessions.edit_training_session',$trainingSession->id ) }}">
-                                            <i class="fas fa-pencil-alt"></i></a>
+                                        @role('admin|coach')
+                                            <a class="btn btn-warning btn-sm text-white"
+                                                href="{{ route('TrainingSessions.edit_training_session', $trainingSession->id) }}">
+                                                <i class="fas fa-pencil-alt"></i></a>
 
-                                        <a href="javascript:void(0)" onclick="deleteSession({{ $trainingSession->id }})"
-                                            class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-@endrole
+                                            <a href="javascript:void(0)" onclick="deleteSession({{ $trainingSession->id }})"
+                                                class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                        @endrole
 
 
                                     </td>

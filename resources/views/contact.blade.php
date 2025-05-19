@@ -1,7 +1,7 @@
 @extends('layouts.home-layout')
 @section('content')
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="img/main.jpeg">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <div class="container">
             <div class="row">

@@ -8,7 +8,7 @@
 
 
         <div class="hs-slider owl-carousel">
-            <div class="hs-item set-bg" data-setbg="img/hero/hero-1.jpg">
+            <div class="hs-item set-bg" data-setbg="img/hero/hero-1.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 offset-lg-6">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hs-item set-bg" data-setbg="img/hero/hero-2.jpg">
+            <div class="hs-item set-bg" data-setbg="img/hero/hero-2-1.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 offset-lg-6">
@@ -101,7 +101,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="class-item">
                         <div class="ci-pic">
-                            <img src="img/accueil/salle-cardio.jpg" usemap="#cardios" alt="Space CARDIO">
+                            <img src="img/accueil/cardio.jpeg" usemap="#cardios" alt="Space CARDIO">
                             <map name="cardios">
                                 <area shape="rect" coords="4,7,609,439" alt="Space CARDIO">
                             </map>
@@ -115,7 +115,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="class-item">
                         <div class="ci-pic">
-                            <img src="img/accueil/salle-renfo.jpg" usemap="#renfos" alt="">
+                            <img src="img/accueil/renfo.jpeg" usemap="#renfos" alt="">
                             <map name="renfos">
                                 <area shape="rect" coords="4,7,609,439" alt="">
                             </map>
@@ -129,7 +129,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="class-item">
                         <div class="ci-pic">
-                            <img src="img/accueil/salle-stretching.jpg" usemap="#stretchs" alt="">
+                            <img src="img/accueil/strech.jpeg" usemap="#stretchs" alt="">
                             <map name="stretchs">
                                 <area shape="rect" coords="4,7,609,439" alt="">
                             </map>
@@ -143,28 +143,28 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="class-item">
                         <div class="ci-pic">
-                            <img src="img/accueil/salle-studiogym.jpg" usemap="#studios"alt="">
+                            <img src="img/accueil/spa2.png" usemap="#studios"alt="">
                             <map name="studios">
                                 <area shape="rect" coords="4,7,609,439" alt="">
                             </map>
                         </div>
                         <div class="ci-text">
                             <span>Studio</span>
-                            <h4>Gym</h4>
+                            <h4>Spa</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="class-item">
                         <div class="ci-pic">
-                            <img src="img/accueil/salle-bike.jpg" usemap="#salles" alt="">
+                            <img src="img/accueil/caf2.jpeg" usemap="#salles" alt="">
                             <map name="salles">
                                 <area shape="rect" coords="4,7,609,439" alt="">
                             </map>
                         </div>
                         <div class="ci-text">
                             <span>Studio</span>
-                            <h4>Bike</h4>
+                            <h4>Cafeteria</h4>
                         </div>
                     </div>
                 </div>

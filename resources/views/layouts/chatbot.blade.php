@@ -6,24 +6,22 @@
     }
 </script>
 
-
 <div id="chatbot-launcher">
-    <img src={{ asset('img/chatbot.png') }} alt="Chat" id="chatbot-icon" onclick="toggleChat()">
-    <span id="chatbot-label"> ASK AI</span>
+    <img src="{{ asset('img/chatbot.png') }}" alt="Chat" id="chatbot-icon">
+    <span id="chatbot-label">ASK AI</span>
 </div>
 
 <div id="chatbot-container" class="hidden">
     <div id="chatbot-header">
         <h6 style="color: white">Chat with Gym AI</h6>
-        <button id="chatbot-close" onclick="toggleChat()">&times;</button>
+        <button id="chatbot-close">&times;</button>
     </div>
     <div id="chatbot-messages" style="max-height: 300px; overflow-y: auto;">
         <!-- Chat messages will be dynamically added here -->
     </div>
-
     <div id="chatbot-input">
         <input type="text" id="text" name="text" placeholder="Type a message...">
-        <button onclick="run()" id="chatbot-send">Send</button>
+        <button id="chatbot-send">Send</button>
     </div>
 </div>
 
@@ -36,7 +34,15 @@
         model: "gemini-1.5-flash"
     });
 
-    window.run = async function run() {
+    // Chat functionality
+    document.getElementById('chatbot-send').addEventListener('click', run);
+    document.getElementById('text').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            run();
+        }
+    });
+
+    async function run() {
         const input = document.getElementById("text");
         const question = input.value.trim();
 
@@ -55,12 +61,11 @@
         try {
             const result = await model.generateContent(prompt);
             const response = await result.response.text();
-
             addMessage("bot", response);
         } catch (err) {
             addMessage("bot", "⚠️ Error fetching response.");
         }
-    };
+    }
 
     function addMessage(sender, text, save = true) {
         let messages = document.getElementById("chatbot-messages");
@@ -87,50 +92,30 @@
         }
     }
 
-    window.toggleChat = function() {
+    // Toggle functionality
+    document.getElementById("chatbot-launcher").addEventListener("click", function() {
+        document.getElementById("chatbot-container").classList.toggle("hidden");
+    });
+
+    document.getElementById("chatbot-close").addEventListener("click", function(e) {
+        e.stopPropagation();
+        document.getElementById("chatbot-container").classList.add("hidden");
+    });
+
+    // Close when clicking outside (optional)
+    document.addEventListener('click', function(event) {
         const chatbot = document.getElementById("chatbot-container");
-        if (chatbot.classList.contains("hidden")) {
-            chatbot.classList.remove("hidden");
-        } else {
+        const launcher = document.getElementById("chatbot-launcher");
+
+        if (!chatbot.contains(event.target) && !launcher.contains(event.target) && !chatbot.classList.contains(
+                'hidden')) {
             chatbot.classList.add("hidden");
         }
-    };
-    // window.addEventListener("load", loadChatHistory);
-
-    // function loadChatHistory() {
-    //     const messages = JSON.parse(sessionStorage.getItem("chatHistory") || "[]");
-    //     messages.forEach(({
-    //         sender,
-    //         text
-    //     }) => {
-    //         addMessage(sender, text, false);
-    //     });
-    // }
-
-    window.addEventListener('load', function() {
-        let chatbotContainer = document.getElementById("chatbot-container");
-        if (chatbotContainer) {
-            chatbotContainer.style.display = "none";
-        }
     });
 
-    document.getElementById("chatbot-launcher").addEventListener("click", function() {
-        let chatbotContainer = document.getElementById("chatbot-container");
-        if (chatbotContainer.style.display === "none" || chatbotContainer.style.display === "") {
-            chatbotContainer.style.display = "flex";
-        } else {
-            chatbotContainer.style.display = "none";
-        }
-    });
-
-    document.getElementById("chatbot-close").addEventListener("click", function() {
-        document.getElementById("chatbot-container").style.display = "none";
-    });
-
-
+    // Navigation toggle (keep this if needed)
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('nav');
-
     if (navToggle && nav) {
         navToggle.addEventListener('click', () => {
             nav.classList.toggle('active');

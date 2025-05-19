@@ -76,9 +76,9 @@
                                         @endif
                                     </td>
                                     <td class="project-actions project-state">
-                                        <a class="btn btn-info btn-sm" href="{{ route('pricing.show', $package->id) }}">
+                                        {{-- <a class="btn btn-info btn-sm" href="{{ route('pricing.show', $package->id) }}">
                                             <i class="fa fa-eye"></i>
-                                        </a>
+                                        </a> --}}
                                         <a class="btn btn-warning btn-sm text-white"
                                             href="{{ route('pricing.edit', $package->id) }}">
                                             <i class="fas fa-pencil-alt"></i>

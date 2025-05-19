@@ -127,7 +127,7 @@
                 {{-- # ======================================= # Coach Training Sessions # ======================================= # --}}
                 @role('coach')
                     <div class="col-12 mb-4">
-                        <h2 class="font-weight-bold text-dark mb-4">MY TRAINING SESSIONS</h2>
+                        <h2 class="font-weight-bold text-white mb-4">MY TRAINING SESSIONS</h2>
                     </div>
 
                     @foreach ($trainingSessions as $session)

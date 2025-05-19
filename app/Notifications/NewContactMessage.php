@@ -44,7 +44,7 @@ class NewContactMessage extends Notification
             'name' => $this->contact->name,
             'email' => $this->contact->email,
             'subject' => $this->contact->subject,
-            'message' => str_limit($this->contact->message, 50),
+            'message' => \Illuminate\Support\Str::limit($this->contact->message, 50),
             'url' => route('admin.contacts.show', $this->contact->id),
         ];
     }

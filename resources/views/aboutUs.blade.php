@@ -1,7 +1,7 @@
 @extends('layouts.home-layout')
 @section('content')
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb-bg.jpg"></section>
+    <section class="breadcrumb-section set-bg" data-setbg="img/main.jpeg"></section>
     <!-- Breadcrumb Section End -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -90,7 +90,7 @@
     <!-- Banner Section End -->
 
     <!-- Testimonial Section Begin -->
-    <section class="testimonial-section spad">
+    {{-- <section class="testimonial-section spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -152,6 +152,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Testimonial Section End -->
 @endsection

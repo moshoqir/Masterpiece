@@ -2455,6 +2455,12 @@ ol {
     color: #fff;
     background: #7d276d;
     text-decoration: none;
+    /* Add these to prevent any borders/lines */
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    /* If the line is from a pseudo-element */
+    position: relative;
 }
 
 /* Cart Icon Styles */
@@ -3389,6 +3395,9 @@ h6 {
     cursor: pointer;
     z-index: 1000;
 }
+.hidden {
+    display: none !important;
+}
 
 #chatbot-icon {
     width: 160px;
@@ -3417,7 +3426,7 @@ h6 {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    background-color: #394167;
+    background-color: #673961;
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -3426,7 +3435,7 @@ h6 {
 }
 
 #chatbot-header {
-    background-color: #7a6ad8;
+    background-color: #8c1f8f;
     color: rgb(255, 255, 255);
     padding: 10px;
     display: flex;
@@ -3470,7 +3479,7 @@ h6 {
 }
 
 #chatbot-send {
-    background-color: #7a6ad8;
+    background-color: #8c1f8f;
     color: rgb(255, 255, 255);
     border: none;
     padding: 8px 12px;

@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h4>Show Session {{ $trainingSession->id }}</h4>
+                        <h4 class="text-white">Show Session {{ $trainingSession->id }}</h4>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->

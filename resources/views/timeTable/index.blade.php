@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h4>Gym Class Timetable</h4>
+                        <h4 class="text-white">Gym Class Timetable</h4>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                            <li class="breadcrumb-item active">Timetable</li>
+                            <li class="breadcrumb-item active text-white">Timetable</li>
                         </ol>
                     </div>
                 </div>

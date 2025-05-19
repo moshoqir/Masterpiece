@@ -51,6 +51,8 @@ class User extends Authenticatable implements BannableContract
     }
 
 
+
+
     /**
      * The attributes that should be hidden for serialization.
      *

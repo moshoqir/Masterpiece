@@ -38,7 +38,7 @@
 <body>
 
     <div class="limiter">
-        <div class="container-log" style="background-image: url('img/hero/hero-1.jpg');">
+        <div class="container-log" style="background-image: url('img/hero/hero-1.jpeg');">
             <div class="logintn">
                 <form method="POST" action="{{ route('register') }}">
                     @csrf

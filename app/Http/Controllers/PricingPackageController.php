@@ -98,19 +98,13 @@ class PricingPackageController extends Controller
             'price' => 'required|numeric',
             'duration' => 'required|string|max:255',
             'icon' => 'nullable|string|max:255',
+            'is_popular' => 'nullable|boolean',
+            'is_active' => 'nullable|boolean',
             'features' => 'nullable|array',
             'features.*' => 'nullable|string',
         ]);
 
-        $pricing->update([
-            'name' => $request->name,
-            'price' => $request->price,
-            'duration' => $request->duration,
-            'is_popular' => $request->has('is_popular'),
-            'icon' => $request->icon,
-            'display_order' => $request->display_order ?? 0,
-            'is_active' => $request->has('is_active')
-        ]);
+        $pricing->update($validated);
 
 
 
